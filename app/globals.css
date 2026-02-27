@@ -1,26 +1,185 @@
-@import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.7;
+  margin: 0;
+  scroll-behavior: smooth;
+  background-color: #0a0a0f; 
+  color: #e0e6ed;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+section {
+  max-width: 850px;
+  margin: auto;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+h1, h2, h3 {
+  color: #ffffff;
+}
+
+h2 {
+  display: inline-block;
+  font-weight: 700;
+}
+
+.about h2 {
+  border-bottom: 2px solid #1e90ff;;
+}
+
+.hero-content {
+  display: flex;
+}
+
+.hero-content h1 {
+  font-size: 4rem;
+  margin: 0;
+}
+
+.hero-content h2 {
+  font-weight: 400;
+  margin: 0;
+}
+
+.hero-content p {
+  font-size: 1.1rem;
+  color: #d0d6e0;
+}
+
+.info p {
+  margin-top: 0;
+}
+
+main {
+  position: relative;
+  background: #0e0e15;
+  overflow: hidden;
+  z-index: 1;
+  height: auto;
+  min-height: 100vh;
+  display: flex;
+
+}
+
+main::before,
+main::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(150px); 
+  opacity: 0.45;     
+  z-index: 0;
+}
+
+main::before {
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(30,144,255,0.7) 0%, rgba(30,144,255,0) 80%);
+  top: 120px;  
+  left: -100px;
+}
+
+main::after {
+  width: 280px; 
+  height: 280px;
+  background: radial-gradient(circle, rgba(99,179,255,0.6) 0%, rgba(99,179,255,0) 80%);
+  bottom: -100px;
+  right: -80px;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+ul li {
+  display: flex;
+  align-items: center;
+}
+
+ul li::before {
+  content: "▹";
+  color: #1e90ff;
+  margin-right: 0.5rem;
+}
+
+ul li h3 {
+  margin: 0;
+}
+
+.icons {
+  margin-top: 1.5rem;
+}
+
+.icons a img:hover {
+  cursor: pointer;
+}
+
+.icons a {
+  text-decoration: none;
+}
+
+.education-item {
+  margin-bottom: 2rem;
+}
+.education-item h3 {
+  margin: 0;
+  font-weight: 600;
+  color: #ffffff;
+}
+.education-item .institution {
+  margin: 0.2rem 0;
+  font-size: 1em;
+  color: #9bbcf5;
+}
+.education-item .years {
+  margin: 0;
+  font-size: 1rem;
+  color: #7a8596;
+}
+
+.work-item {
+  margin-bottom: 2rem;
+}
+
+.work-item h3 {
+  margin: 0;
+  font-weight: 600;
+  color: #ffffff;
+  position: relative;
+}
+
+
+.work-item .institution {
+  margin: 0.2rem 0;
+  font-size: 1em;
+  color: #9bbcf5;
+}
+
+.work-item .years {
+  margin: 0;
+  font-size: 1rem;
+  color: #7a8596;
+}
+
+a {
+  color: #1e90ff;
+  text-underline-offset: 3px;
+}
+
+@media (max-width: 870px) {
+  .hero-content {
+    flex-direction: column-reverse;
+    padding: 1rem;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.grid {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  width: 100%;
+  background-image: 
+    linear-gradient(to right, rgba(128, 128, 128, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(128, 128, 128, 0.02) 1px, transparent 1px);
+  background-size: 24px 24px;
+  z-index: -1;
 }
