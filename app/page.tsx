@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 export default function Home() {
   return (
     <main>
@@ -19,7 +17,7 @@ export default function Home() {
         </p>
         <div className="icons">
           <a href="https://github.com/LerkkaP">
-            <Image 
+            <img 
               src="/github.svg"
               width="40"
               height="40"
@@ -27,7 +25,7 @@ export default function Home() {
             />
           </a>
           <a href="https://linkedin.com/in/erikpeteri">
-            <Image 
+            <img 
               src="/linkedin.svg"
               width="40"
               height="40"
@@ -36,7 +34,7 @@ export default function Home() {
           </a>
         </div>
       </div>    
-      <Image 
+      <img 
         src="/picture.png"
         width="240"
         height="240"
